@@ -38,9 +38,14 @@ It will print lines as they are written into the file
 		usage: monitor.py [-h] [-s P_STATS] [-a P_ALERT] [-t T_ALERT]
 		optional arguments:
 		  -h, --help  show this help message and exit
-		  -s P_STATS  monitoring period length in seconds (int)
-		  -a P_ALERT  alert period length in seconds (int)
-		  -t T_ALERT  alert treshold in hits/seconds (int)
+		  -s P_STATS  monitoring period length in seconds (int) - default to 10s
+		  -a P_ALERT  alert period length in seconds (int) - default to 120s
+		  -t T_ALERT  alert treshold in hits/seconds (int) - default to 20hits/s over 120s
+
+Screen has two parts:
+
+1. Last period statistics: we only show statistics for the last `P_STATS` period
+2. Historic traffic alerts: we show messages showing when alerting thresholds are crossed so that they remain visible
 
 ##4. Tests
 
